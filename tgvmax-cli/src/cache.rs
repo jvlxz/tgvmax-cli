@@ -28,8 +28,7 @@ pub fn load_stations() -> Result<Option<Vec<Station>>> {
         Ok(s) => s,
         Err(e) if e.kind() == std::io::ErrorKind::NotFound => return Ok(None),
         Err(e) => {
-            return Err(e)
-                .with_context(|| format!("Failed to read cache at {}", path.display()))
+            return Err(e).with_context(|| format!("Failed to read cache at {}", path.display()));
         }
     };
     let cache: StationCache = match serde_json::from_str(&contents) {

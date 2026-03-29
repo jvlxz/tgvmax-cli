@@ -10,7 +10,8 @@ use crate::error::{Result, TgvmaxError};
 use crate::models::{OpenDataRecordWrapper, OpenDataResponse, Proposal, SearchParams, Station};
 
 const TRAIN_SEARCH_URL: &str = "https://data.sncf.com/api/records/1.0/search/";
-const STATION_LIST_URL: &str = "https://data.sncf.com/api/explore/v2.1/catalog/datasets/tgvmax/records";
+const STATION_LIST_URL: &str =
+    "https://data.sncf.com/api/explore/v2.1/catalog/datasets/tgvmax/records";
 
 /// Client for the SNCF Open Data API (tgvmax dataset).
 pub struct OpenDataClient {
