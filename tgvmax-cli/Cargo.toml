@@ -1,0 +1,24 @@
+[package]
+name = "tgvmax-cli"
+version = "0.1.0"
+description = "CLI to find available TGVmax 0€ trains"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+
+[[bin]]
+name = "tgvmax"
+path = "src/main.rs"
+
+[dependencies]
+tgvmax-core = { path = "../tgvmax-core" }
+tokio.workspace = true
+clap.workspace = true
+anyhow.workspace = true
+comfy-table.workspace = true
+dirs.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+chrono.workspace = true

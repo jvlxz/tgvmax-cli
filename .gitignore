@@ -1,0 +1,14 @@
+/target
+
+# macOS
+.DS_Store
+
+# Environment
+.env
+
+# Editor files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
