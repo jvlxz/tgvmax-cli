@@ -130,8 +130,18 @@ mod tests {
 
     #[test]
     fn dedup_same_train_different_departure_times() {
-        let batch1 = vec![proposal("6607", "09:00", "PARIS (intramuros)", "LYON (intramuros)")];
-        let batch2 = vec![proposal("6607", "08:55", "PARIS MONTPARNASSE", "LYON (intramuros)")];
+        let batch1 = vec![proposal(
+            "6607",
+            "09:00",
+            "PARIS (intramuros)",
+            "LYON (intramuros)",
+        )];
+        let batch2 = vec![proposal(
+            "6607",
+            "08:55",
+            "PARIS MONTPARNASSE",
+            "LYON (intramuros)",
+        )];
 
         let result = dedup_cross_query(vec![batch1, batch2]);
         assert_eq!(result.len(), 1);
@@ -140,8 +150,18 @@ mod tests {
 
     #[test]
     fn dedup_keeps_different_trains() {
-        let batch1 = vec![proposal("6607", "09:00", "PARIS (intramuros)", "LYON (intramuros)")];
-        let batch2 = vec![proposal("6609", "11:00", "PARIS (intramuros)", "LYON (intramuros)")];
+        let batch1 = vec![proposal(
+            "6607",
+            "09:00",
+            "PARIS (intramuros)",
+            "LYON (intramuros)",
+        )];
+        let batch2 = vec![proposal(
+            "6609",
+            "11:00",
+            "PARIS (intramuros)",
+            "LYON (intramuros)",
+        )];
 
         let result = dedup_cross_query(vec![batch1, batch2]);
         assert_eq!(result.len(), 2);
